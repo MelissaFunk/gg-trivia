@@ -1,5 +1,3 @@
-melissa = User.create(username: "melissafunk", password: "hello")
-
 q1 = Question.create(prompt: "Who speaks the first line of the series?", option1: "Lorelai Gilmore", option2: "Rory Gilmore", option3: "Luke Danes", option4: "Emily Gilmore", answer: "Lorelai Gilmore")
 q2 = Question.create(prompt: "What is the name of Babette's cat that dies in Season 1?", option1: "Sugar", option2: "Cinnamon", option3: "Salty", option4: "Sammy", answer: "Cinnamon")
 q3 = Question.create(prompt: "What does Rory shoplift after her first kiss with Dean?", option1: "Cornstarch", option2: "Flour", option3: "Sugar", option4: "Baking Powder", answer: "Cornstarch")

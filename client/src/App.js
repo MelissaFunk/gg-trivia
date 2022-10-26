@@ -66,8 +66,6 @@ function App() {
     })
   }, [])
 
-
-
   return (
     <Switch>
       <Route exact path="/"><Login currentUser={currentUser} setCurrentUser={setCurrentUser}/></Route>
@@ -120,7 +118,7 @@ function App() {
       <Route exact path="/question47"><Q47 currentUser={currentUser}/></Route>
       <Route exact path="/question48"><Q48 currentUser={currentUser}/></Route>
       <Route exact path="/question49"><Q49 currentUser={currentUser}/></Route>
-      <Route exact path="/question50"><Q5 currentUser={currentUser}/></Route>
+      <Route exact path="/question50"><Q50 currentUser={currentUser}/></Route>
       <Route exact path="/end"><End currentUser={currentUser} setCurrentUser={setCurrentUser}/></Route>
     </Switch>
   );

@@ -38,18 +38,20 @@ function Q21({ currentUser }) {
   }
 
   return(
-    <div>
+    <div className="q-div">
       <div className="status-bar-21">
-        <h4>Question: 21/50</h4>
+        <h4 className="q-status">Question: 21/50</h4>
       </div>
       <h2>{question.prompt}</h2>
-      <button value={question.option1} onClick={optionClick}>{question.option1}</button>
-      <button value={question.option2} onClick={optionClick}>{question.option2}</button>
-      <button value={question.option3} onClick={optionClick}>{question.option3}</button>
-      <button value={question.option4} onClick={optionClick}>{question.option4}</button>
-      <p>Your Answer: {submission}</p>
+      <div className="options-div">
+        <button className="q-option" value={question.option1} onClick={optionClick}>{question.option1}</button>
+        <button className="q-option" value={question.option2} onClick={optionClick}>{question.option2}</button>
+        <button className="q-option" value={question.option3} onClick={optionClick}>{question.option3}</button>
+        <button className="q-option" value={question.option4} onClick={optionClick}>{question.option4}</button>
+      </div>
+      <p>Your Answer: <b>{submission}</b></p>
       {response}
-      {response ? <button onClick={nextQuestion}>Next Question ⮕</button> : <button onClick={handleSubmission}>Submit Answer</button>}
+      {response ? <button className="next-q" onClick={nextQuestion}>Next Question ⮕</button> : <button className="submit-btn" onClick={handleSubmission}>Submit Answer</button>}
     </div>
   )
 }

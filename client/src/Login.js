@@ -52,19 +52,21 @@ function Login({ currentUser, setCurrentUser }) {
   }
 
   return (
-    <div>
+    <div className="login-div">
       <h1>Gilmore Girls Trivia!</h1>
 
+      <img src="https://i.imgur.com/2uyev2H.jpg"/>
+
       <form onSubmit={onSignupSubmit}>
-        <input placeholder=" Username" type="text" value={userSign} onChange={e => setUserSign(e.target.value)}></input> 
-        <input placeholder=" Password"type="password" value={passSign} onChange={e => setPassSign(e.target.value)}></input>
+        <input className="signup-input" placeholder="Username" type="text" value={userSign} onChange={e => setUserSign(e.target.value)}></input> 
+        <input className="signup-input" placeholder="Password"type="password" value={passSign} onChange={e => setPassSign(e.target.value)}></input>
         <button type="submit">Sign Up To Start</button>
       </form>
         
 
-      <form onSubmit={onLoginSubmit}>
-        <input placeholder=" Username" type="text" value={userLog} onChange={e => setUserLog(e.target.value)}></input>
-        <input placeholder=" Password"type=" password" value={passLog} onChange={e => setPassLog(e.target.value)}></input>
+      <form className="login-form" onSubmit={onLoginSubmit}>
+        <input className="login-input" placeholder="Username" type="text" value={userLog} onChange={e => setUserLog(e.target.value)}></input>
+        <input className="login-input" placeholder="Password" type="password" value={passLog} onChange={e => setPassLog(e.target.value)}></input>
         <button type="submit">Log In For Top Scores</button>
       </form>
 

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router'
-import Top5Card from './Top5Card'
 
 function End({ currentUser, setCurrentUser }) {
   const [top5, setTop5] = useState([])
@@ -15,9 +14,18 @@ function End({ currentUser, setCurrentUser }) {
     })
   }, [])
 
+  useEffect(() => {
+    fetch('/me')
+    .then(res => {
+      if(res.ok) {
+        res.json().then(user => setCurrentUser(user))
+      }
+    })
+  }, [])
+
   const top5Display = 
     top5.sort((a,b) => b.total_correct - a.total_correct).slice(0, 5).map(user => 
-      <Top5Card key={user.id} user={user} />
+      <p key={user.id}>{user.username}'s score: {user.total_correct}/50</p>
   )
 
     const handleLogout = () => {
@@ -33,10 +41,13 @@ function End({ currentUser, setCurrentUser }) {
     } 
 
   return(
-    <div>
-      <h2>My score: {currentUser.total_correct}/20</h2>
-      <h3>Top 5 scores:</h3>
-      {top5Display}
+    <div className="end-div">
+      <h2>My score: {currentUser.total_correct}/50</h2>
+      <img src="https://i.pinimg.com/474x/ee/91/cb/ee91cb672023d12ef8007d99ae2a2945.jpg" />
+      <div className="top5-div">
+        <h3>Top 5 Scores:</h3>
+        {top5Display}
+      </div>
       <button onClick={handleLogout}>Logout</button>
     </div>
   )
