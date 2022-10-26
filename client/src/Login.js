@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router'
 
-function Login({ setCurrentUser }) {
+function Login({ currentUser, setCurrentUser }) {
   const [userLog, setUserLog] = useState('')
   const [passLog, setPassLog] = useState('')
   const [userSign, setUserSign] = useState('')
@@ -43,7 +43,7 @@ function Login({ setCurrentUser }) {
       if(res.ok) {
         res.json().then(user => {
           setCurrentUser(user)
-          history.push('/question1')
+          history.push('/end')
         })
       } else {
         res.json().then(errorData => setErrors(errorData.errors))
@@ -54,18 +54,20 @@ function Login({ setCurrentUser }) {
   return (
     <div>
       <h1>Gilmore Girls Trivia!</h1>
-      <form onSubmit={onLoginSubmit}>
-        <input placeholder=" Username" type="text" value={userLog} onChange={e => setUserLog(e.target.value)}></input>
-        <input placeholder=" Password"type=" password" value={passLog} onChange={e => setPassLog(e.target.value)}></input>
-        <button type="submit">Login</button>
-      </form>
 
       <form onSubmit={onSignupSubmit}>
         <input placeholder=" Username" type="text" value={userSign} onChange={e => setUserSign(e.target.value)}></input> 
         <input placeholder=" Password"type="password" value={passSign} onChange={e => setPassSign(e.target.value)}></input>
-        <button type="submit">Sign Up</button>
+        <button type="submit">Sign Up To Start</button>
       </form>
         
+
+      <form onSubmit={onLoginSubmit}>
+        <input placeholder=" Username" type="text" value={userLog} onChange={e => setUserLog(e.target.value)}></input>
+        <input placeholder=" Password"type=" password" value={passLog} onChange={e => setPassLog(e.target.value)}></input>
+        <button type="submit">Log In For Top Scores</button>
+      </form>
+
       <div>{errors ? errors.map(error => (
         <p key={error}>{error}</p>
       )) : null}</div>

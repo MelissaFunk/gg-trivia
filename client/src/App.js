@@ -40,7 +40,7 @@ function App() {
 
   return (
     <Switch>
-      <Route exact path="/"><Login setCurrentUser={setCurrentUser}/></Route>
+      <Route exact path="/"><Login currentUser={currentUser} setCurrentUser={setCurrentUser}/></Route>
       <Route exact path="/question1"><Q1 currentUser={currentUser}/></Route>
       <Route exact path="/question2"><Q2 currentUser={currentUser}/></Route>
       <Route exact path="/question3"><Q3 currentUser={currentUser}/></Route>

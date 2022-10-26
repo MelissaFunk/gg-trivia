@@ -34,7 +34,6 @@ function End({ currentUser, setCurrentUser }) {
 
   return(
     <div>
-      <h1>The End!</h1>
       <h2>My score: {currentUser.total_correct}/20</h2>
       <h3>Top 5 scores:</h3>
       {top5Display}
