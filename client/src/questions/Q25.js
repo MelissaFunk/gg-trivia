@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router'
 
-function Q4({ currentUser }) {
+function Q25({ currentUser }) {
   const [question, setQuestion] = useState([])
   const [submission, setSubmission] = useState("")
   const [response, setResponse] = useState("")
   const history = useHistory()
 
   useEffect(() => {
-    fetch('/questions/4')
+    fetch('/questions/25')
     .then(res => res.json())
     .then(data => setQuestion(data))
   }, [])
@@ -34,13 +34,13 @@ function Q4({ currentUser }) {
   }
 
   const nextQuestion = () => {
-    history.push('/question5')
+    history.push('/question26')
   }
 
   return(
     <div>
-      <div className="status-bar-4">
-        <h4>Question: 4/50</h4>
+      <div className="status-bar-25">
+        <h4>Question: 25/50</h4>
       </div>
       <h2>{question.prompt}</h2>
       <button value={question.option1} onClick={optionClick}>{question.option1}</button>
@@ -54,4 +54,4 @@ function Q4({ currentUser }) {
   )
 }
 
-export default Q4
+export default Q25

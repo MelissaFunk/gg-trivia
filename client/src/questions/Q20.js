@@ -34,13 +34,13 @@ function Q20({ currentUser }) {
   }
 
   const nextQuestion = () => {
-    history.push('/end')
+    history.push('/question21')
   }
 
   return(
     <div>
       <div className="status-bar-20">
-        <h4>Question: 20/20</h4>
+        <h4>Question: 20/50</h4>
       </div>
       <h2>{question.prompt}</h2>
       <button value={question.option1} onClick={optionClick}>{question.option1}</button>

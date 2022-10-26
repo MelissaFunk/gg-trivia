@@ -40,7 +40,7 @@ function Q7({ currentUser }) {
   return(
     <div>
       <div className="status-bar-7">
-        <h4>Question: 7/20</h4>
+        <h4>Question: 7/50</h4>
       </div>
       <h2>{question.prompt}</h2>
       <button value={question.option1} onClick={optionClick}>{question.option1}</button>

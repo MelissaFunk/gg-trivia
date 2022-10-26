@@ -40,7 +40,7 @@ function Q16({ currentUser }) {
   return(
     <div>
       <div className="status-bar-16">
-        <h4>Question: 16/20</h4>
+        <h4>Question: 16/50</h4>
       </div>
       <h2>{question.prompt}</h2>
       <button value={question.option1} onClick={optionClick}>{question.option1}</button>
