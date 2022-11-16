@@ -1,24 +1,13 @@
-# README
+Welcome to Gilmore Girls Trivia! Users answer a series of trivia questions about the gift that is Gilmore Girls the TV show. At the end, users can see the top 5 trivia scores by all users.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+System dependencies:
 
-Things you may want to cover:
+Ruby version: 2.7.4
+Rails version: 6.1.4
 
-* Ruby version
+To start:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run bundle install to install dependencies on the back-end server
+Run rails s to start the back-end server
+Run npm install to install depenendencies on the front-end server
+Run npm start to start the front-end server (from the front-end folder)
